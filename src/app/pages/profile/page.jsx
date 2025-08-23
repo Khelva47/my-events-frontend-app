@@ -1,4 +1,4 @@
-import Header from "@/components/Header"
+import Header from "@/components/layout/Header"
 import Footer from "@/components/Footer"
 import PageHeader from "@/components/PageHeader"
 import ProfileTabs from "@/components/ProfileTabs"

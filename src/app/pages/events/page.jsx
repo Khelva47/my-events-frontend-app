@@ -1,8 +1,8 @@
 "use client"
 
 import { useState } from "react"
-import Header from "@/components/Header"
-import Footer from "@/components/Footer"
+import Header from "@/components/layout/Header"
+import Footer from "@/components/layout/Footer"
 import EventCard from "@/components/EventCard"
 import EventFilters from "@/components/EventFilters"
 import { Button } from "@/components/ui/button"
