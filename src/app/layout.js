@@ -6,7 +6,6 @@ import "./globals.css"
 export const metadata = {
   title: "EventHub - Your Premier Event Ticketing Platform",
   description: "Discover and book tickets for amazing events near you",
-  generator: "v0.app",
 }
 
 export default function RootLayout({ children }) {
