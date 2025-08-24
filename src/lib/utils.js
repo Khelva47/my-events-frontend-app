@@ -18,7 +18,7 @@ export function formatDate(date, options = {}) {
     month: "long",
     day: "numeric",
   }
-  return new Intl.DateTimeFormat("en-US", { ...defaultOptions, ...options }).format(new Date(date))
+  return new Intl.DateTimeFormat("en-US", { ...defaultOptions, ...options }).format(date)
 }
 
 export function formatTime(date) {
@@ -26,65 +26,52 @@ export function formatTime(date) {
     hour: "numeric",
     minute: "2-digit",
     hour12: true,
-  }).format(new Date(date))
-}
-
-export function formatDateTime(date) {
-  return `${formatDate(date)} at ${formatTime(date)}`
+  }).format(date)
 }
 
 export function slugify(text) {
   return text
+    .toString()
     .toLowerCase()
-    .replace(/[^\w\s-]/g, "")
-    .replace(/[\s_-]+/g, "-")
-    .replace(/^-+|-+$/g, "")
+    .trim()
+    .replace(/\s+/g, "-")
+    .replace(/[^\w-]+/g, "")
+    .replace(/--+/g, "-")
 }
 
-export function truncateText(text, maxLength = 100) {
-  if (text.length <= maxLength) return text
-  return text.slice(0, maxLength).trim() + "..."
+export function truncate(text, length = 100) {
+  if (text.length <= length) return text
+  return text.substring(0, length).trim() + "..."
 }
 
-export function generateId() {
-  return Math.random().toString(36).substr(2, 9)
-}
-
-export function debounce(func, wait) {
-  let timeout
-  return function executedFunction(...args) {
-    const later = () => {
-      clearTimeout(timeout)
-      func(...args)
-    }
-    clearTimeout(timeout)
-    timeout = setTimeout(later, wait)
-  }
-}
-
-export function validateEmail(email) {
+export function isValidEmail(email) {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
   return emailRegex.test(email)
 }
 
-export function validatePhone(phone) {
+export function isValidPhone(phone) {
   const phoneRegex = /^\+?[\d\s\-$$$$]{10,}$/
   return phoneRegex.test(phone)
 }
 
-export function getEventStatus(eventDate) {
+export function getEventStatus(startDate, endDate) {
   const now = new Date()
-  const event = new Date(eventDate)
+  const start = new Date(startDate)
+  const end = new Date(endDate)
 
-  if (event < now) return "past"
-  if (event.toDateString() === now.toDateString()) return "today"
-  return "upcoming"
+  if (now < start) return "upcoming"
+  if (now >= start && now <= end) return "ongoing"
+  return "ended"
 }
 
-export function calculateDaysUntil(date) {
+export function getDaysUntilEvent(eventDate) {
   const now = new Date()
-  const target = new Date(date)
-  const diffTime = target - now
+  const event = new Date(eventDate)
+  const diffTime = event - now
   const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24))
   return diffDays
+}
+
+export function generateEventId() {
+  return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)
 }

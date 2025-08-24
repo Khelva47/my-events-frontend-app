@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Search, MapPin, Calendar } from "lucide-react"
 import Link from "next/link"
-import Header from "./Header"
+import Header from "./layout/Header"
 
 export default function Hero() {
   return (
