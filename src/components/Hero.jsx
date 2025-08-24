@@ -43,7 +43,7 @@ export default function Hero() {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="text-lg px-8" asChild>
-              <Link href="/events">Browse Events</Link>
+              <Link href="/pages/events">Browse Events</Link>
             </Button>
             <Button size="lg" variant="outline" className="text-lg px-8 bg-transparent" asChild>
               <Link href="/create-event">Create Event</Link>
