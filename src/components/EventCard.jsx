@@ -39,7 +39,7 @@ export default function EventCard({ event }) {
           <span className="text-2xl font-bold text-blue-600">${event.price}</span>
         </div>
         <Button asChild>
-          <Link href={`/events/${event.id}`}>View Details</Link>
+          <Link href={`/pages/events/${event.id}`}>View Details</Link>
         </Button>
       </CardFooter>
     </Card>

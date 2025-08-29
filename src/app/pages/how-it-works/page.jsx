@@ -100,7 +100,7 @@ export default function HowItWorksPage() {
 
           <div className="text-center mt-12">
             <Button asChild size="lg">
-              <Link href="/events">Start Browsing Events</Link>
+              <Link href="/pages/events">Start Browsing Events</Link>
             </Button>
           </div>
         </div>
@@ -132,7 +132,7 @@ export default function HowItWorksPage() {
 
           <div className="text-center mt-12">
             <Button asChild size="lg" variant="outline">
-              <Link href="/create-event">Create Your First Event</Link>
+              <Link href="/pages/create-event">Create Your First Event</Link>
             </Button>
           </div>
         </div>
