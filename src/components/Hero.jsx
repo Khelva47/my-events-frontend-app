@@ -45,8 +45,8 @@ export default function Hero() {
             <Button size="lg" className="text-lg px-8" asChild>
               <Link href="/pages/events">Browse Events</Link>
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 bg-transparent" asChild>
-              <Link href="/create-event">Create Event</Link>
+            <Button size="lg" variant="outline" className="text-lg  px-8 bg-transparent" asChild>
+              <Link href="/pages/create-event">Create Event</Link>
             </Button>
           </div>
         </div>

@@ -101,7 +101,7 @@ export default function FeaturedEvents() {
 
         <div className="text-center mt-12">
           <Button size="lg" variant="outline" asChild>
-            <Link href="/events">View All Events</Link>
+            <Link href="/pages/events">View All Events</Link>
           </Button>
         </div>
       </div>
