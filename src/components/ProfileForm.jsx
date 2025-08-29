@@ -9,11 +9,11 @@ import { User, Mail, Phone, MapPin } from "lucide-react"
 
 export default function ProfileForm() {
   const [profileData, setProfileData] = useState({
-    firstName: "John",
-    lastName: "Doe",
-    email: "john.doe@example.com",
-    phone: "+1 (555) 123-4567",
-    location: "New York, NY",
+    firstName: "Kelvin",
+    lastName: "Mponda",
+    email: "kelvinmponda47@gmail.com",
+    phone: "+265 994 679 974",
+    location: "Zomba, MW",
   })
 
   const handleInputChange = (field, value) => {
