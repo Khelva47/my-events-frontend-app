@@ -21,19 +21,74 @@ export default function RegisterPage() {
     confirmPassword: "",
     userType: "buyer",
   })
+  const [errors, setErrors] = useState({})
+
+  const validatePassword = (password) => {
+    const minLength = 8
+    const hasUpperCase = /[A-Z]/.test(password)
+    const hasLowerCase = /[a-z]/.test(password)
+    const hasNumber = /[0-9]/.test(password)
+    const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(password)
+
+    if (password.length < minLength) {
+      return "Password must be at least 8 characters long"
+    }
+    if (!hasUpperCase) {
+      return "Password must contain at least one uppercase letter"
+    }
+    if (!hasLowerCase) {
+      return "Password must contain at least one lowercase letter"
+    }
+    if (!hasNumber) {
+      return "Password must contain at least one number"
+    }
+    if (!hasSpecialChar) {
+      return "Password must contain at least one special character"
+    }
+    return ""
+  }
+
+  const validateForm = () => {
+    const newErrors = {}
+    const passwordError = validatePassword(formData.password)
+    if (passwordError) {
+      newErrors.password = passwordError
+    }
+    if (formData.password !== formData.confirmPassword) {
+      newErrors.confirmPassword = "Passwords do not match"
+    }
+    setErrors(newErrors)
+    return Object.keys(newErrors).length === 0
+  }
 
   const handleInputChange = (field, value) => {
     setFormData((prev) => ({ ...prev, [field]: value }))
+    // Real-time validation for password and confirmPassword
+    if (field === "password" || field === "confirmPassword") {
+      const newErrors = { ...errors }
+      if (field === "password") {
+        const passwordError = validatePassword(value)
+        newErrors.password = passwordError
+      }
+      if (formData.password && formData.confirmPassword && formData.password !== formData.confirmPassword) {
+        newErrors.confirmPassword = "Passwords do not match"
+      } else if (!newErrors.password) {
+        delete newErrors.confirmPassword
+      }
+      setErrors(newErrors)
+    } else {
+      // Clear errors for other fields when they change
+      setErrors((prev) => ({ ...prev, [field]: "" }))
+    }
   }
 
   const handleRegister = (e) => {
     e.preventDefault()
-    if (formData.password !== formData.confirmPassword) {
-      alert("Passwords do not match")
+    if (!validateForm()) {
       return
     }
     // In real app, this would register with backend
-    alert("Registration functionality would integrate with authentication system")
+    alert("Registration successful! Would integrate with authentication system.")
   }
 
   return (
@@ -62,6 +117,7 @@ export default function RegisterPage() {
                     placeholder="First name"
                     required
                   />
+                  {errors.firstName && <p className="text-sm text-red-600">{errors.firstName}</p>}
                 </div>
                 <div>
                   <Label htmlFor="lastName">Last Name</Label>
@@ -72,6 +128,7 @@ export default function RegisterPage() {
                     placeholder="Last name"
                     required
                   />
+                  {errors.lastName && <p className="text-sm text-red-600">{errors.lastName}</p>}
                 </div>
               </div>
 
@@ -85,6 +142,7 @@ export default function RegisterPage() {
                   placeholder="Enter your email"
                   required
                 />
+                {errors.email && <p className="text-sm text-red-600">{errors.email}</p>}
               </div>
 
               <div>
@@ -98,6 +156,7 @@ export default function RegisterPage() {
                     <SelectItem value="organizer">Event Organizer</SelectItem>
                   </SelectContent>
                 </Select>
+                {errors.userType && <p className="text-sm text-red-600">{errors.userType}</p>}
               </div>
 
               <div>
@@ -119,6 +178,7 @@ export default function RegisterPage() {
                     {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                   </button>
                 </div>
+                {errors.password && <p className="text-sm text-red-600">{errors.password}</p>}
               </div>
 
               <div>
@@ -140,6 +200,7 @@ export default function RegisterPage() {
                     {showConfirmPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                   </button>
                 </div>
+                {errors.confirmPassword && <p className="text-sm text-red-600">{errors.confirmPassword}</p>}
               </div>
 
               <div className="flex items-center">
