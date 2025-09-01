@@ -14,7 +14,7 @@ export default function Hero() {
           </h1>
           <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto">
             Find and book tickets for concerts, conferences, sports events, and workshops. Create unforgettable
-            experiences with EventTix.
+            experiences with Alikonko.
           </p>
 
           {/* Search Bar */}

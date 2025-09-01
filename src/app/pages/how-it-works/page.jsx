@@ -65,7 +65,7 @@ export default function HowItWorksPage() {
       {/* Hero Section */}
       <div className="bg-gradient-to-b from-blue-50 to-white dark:from-blue-950/20 dark:to-background py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl font-bold text-foreground mb-4">How EventTix Works</h1>
+          <h1 className="text-4xl font-bold text-foreground mb-4">How Alikonko Works</h1>
           <p className="text-xl text-muted-foreground mb-8">
             Simple, secure, and reliable event ticketing for everyone
           </p>
@@ -140,7 +140,7 @@ export default function HowItWorksPage() {
         {/* Features Section */}
         <div className="bg-muted/50 rounded-lg p-8">
           <div className="text-center mb-8">
-            <h2 className="text-2xl font-bold text-foreground mb-4">Why Choose EventTix?</h2>
+            <h2 className="text-2xl font-bold text-foreground mb-4">Why Choose Alikonko?</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

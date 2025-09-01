@@ -35,7 +35,7 @@ export default function LoginPage() {
               <Calendar className="h-12 w-12 text-blue-600" />
             </div>
             <CardTitle className="text-2xl font-bold">Welcome Back</CardTitle>
-            <CardDescription>Sign in to your EventTix account</CardDescription>
+            <CardDescription>Sign in to your Alikonko account</CardDescription>
           </CardHeader>
 
           <CardContent>

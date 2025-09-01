@@ -102,7 +102,7 @@ export default function RegisterPage() {
               <Calendar className="h-12 w-12 text-blue-600" />
             </div>
             <CardTitle className="text-2xl font-bold">Create Account</CardTitle>
-            <CardDescription>Join EventTix to discover amazing events</CardDescription>
+            <CardDescription>Join Alikonko to discover amazing events</CardDescription>
           </CardHeader>
 
           <CardContent>
