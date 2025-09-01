@@ -16,7 +16,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <Calendar className="h-8 w-8 text-blue-600" />
-            <span className="text-xl font-bold text-foreground">EventTix</span>
+            <span className="text-xl font-bold text-foreground">Alikonko</span>
           </Link>
 
           {/* Desktop Navigation */}

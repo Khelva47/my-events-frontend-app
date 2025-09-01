@@ -10,11 +10,11 @@ export default function Footer() {
           <div className="col-span-1 md:col-span-2">
             <Link href="/" className="flex items-center space-x-2 mb-4">
               <Calendar className="h-8 w-8 text-blue-400" />
-              <span className="text-2xl font-bold">EventTix</span>
+              <span className="text-2xl font-bold">Alikonko</span>
             </Link>
             <p className="text-gray-300 mb-6 max-w-md">
               Your trusted platform for discovering and booking tickets to amazing events. Create memorable experiences
-              with EventTix.
+              with Alikonko.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-300 hover:text-blue-400 transition-colors">
@@ -88,7 +88,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-300">
-          <p>&copy; 2025 EventTix. All rights reserved.</p>
+          <p>&copy; 2025 Alikonko. All rights reserved.</p>
         </div>
       </div>
     </footer>
