@@ -207,11 +207,11 @@ export default function RegisterPage() {
                 <input id="terms" type="checkbox" className="h-4 w-4 text-blue-600 rounded border-gray-300" required />
                 <Label htmlFor="terms" className="ml-2 text-sm">
                   I agree to the{" "}
-                  <Link href="/terms" className="text-blue-600 hover:underline">
+                  <Link href="/pages/terms" className="text-blue-600 hover:underline">
                     Terms of Service
                   </Link>{" "}
                   and{" "}
-                  <Link href="/privacy" className="text-blue-600 hover:underline">
+                  <Link href="/pages/privacy" className="text-blue-600 hover:underline">
                     Privacy Policy
                   </Link>
                 </Label>
