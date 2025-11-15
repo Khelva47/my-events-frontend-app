@@ -14,8 +14,8 @@ export default function RegisterPage() {
   const [showPassword, setShowPassword] = useState(false)
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
+    firstname: "",
+    lastname: "",
     email: "",
     password: "",
     confirmPassword: "",
@@ -109,26 +109,26 @@ export default function RegisterPage() {
             <form onSubmit={handleRegister} className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <Label htmlFor="firstName">First Name</Label>
+                  <Label htmlFor="firstname">First Name</Label>
                   <Input
-                    id="firstName"
+                    id="firstname"
                     value={formData.firstName}
-                    onChange={(e) => handleInputChange("firstName", e.target.value)}
+                    onChange={(e) => handleInputChange("firstname", e.target.value)}
                     placeholder="First name"
                     required
                   />
-                  {errors.firstName && <p className="text-sm text-red-600">{errors.firstName}</p>}
+                  {errors.firstname && <p className="text-sm text-red-600">{errors.firstname}</p>}
                 </div>
                 <div>
-                  <Label htmlFor="lastName">Last Name</Label>
+                  <Label htmlFor="lastname">Last Name</Label>
                   <Input
-                    id="lastName"
-                    value={formData.lastName}
-                    onChange={(e) => handleInputChange("lastName", e.target.value)}
+                    id="lastname"
+                    value={formData.lastname}
+                    onChange={(e) => handleInputChange("lastname", e.target.value)}
                     placeholder="Last name"
                     required
                   />
-                  {errors.lastName && <p className="text-sm text-red-600">{errors.lastName}</p>}
+                  {errors.lastname && <p className="text-sm text-red-600">{errors.lastname}</p>}
                 </div>
               </div>
 
